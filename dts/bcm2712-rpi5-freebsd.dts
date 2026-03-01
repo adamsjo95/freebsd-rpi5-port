@@ -12,7 +12,7 @@
     model = "Raspberry Pi 5 Model B";
 
     chosen {
-        stdout-path = "serial10:115200n8";
+        stdout-path = "serial0:115200n8";
     };
 
     /* Memory will be filled by bootloader */
@@ -22,8 +22,8 @@
 
     };
 };
-/* Enable the debug UART */
-&uart10 {
+/* Enable the debug UART (uart0 = pl011 at 0x7d001000) */
+&uart0 {
     status = "okay";
 
 };
