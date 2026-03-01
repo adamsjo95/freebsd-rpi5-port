@@ -1,0 +1,39 @@
+// 03.01.2026 
+// John J. Adams
+// SPDX-License-Identifier: (GPL-2.0 OR MIT)
+// FreeBSD device tree for raspberry Pi5 Model BCM2712
+/dts-v1/;
+
+#include <dt-bindings/gpio/gpio.h>
+#include "bcm2712-freebsd.dtsi"
+
+/ {
+    compatible = "raspberrypi,5-model-b", "brcm,bcm2712";
+    model = "Raspberry Pi 5 Model B";
+
+    chosen {
+        stdout-path = "serial10:115200n8";
+    };
+
+    /* Memory will be filled by bootloader */
+    memory@0 {
+        device_type = "memory";
+        reg = <0x0 0x0 0x0 0x28000000>;
+
+    };
+};
+/* Enable the debug UART */
+&uart10 {
+    status = "okay";
+
+};
+/* Enable PCIe2 for RP1 */
+&pcie2 {
+    status = "okay";
+
+};
+/* Enable SD card */
+&sdio1 {
+    bus-width = <4>;
+    status = "okay";
+};
