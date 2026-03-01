@@ -106,7 +106,7 @@
 			reg = <0x7d503000 0x18>;
 			interrupt-parent = <&cpu_l2_irq>;
 			interrupts = <19>;
-			brcm,firmware = <&firmware>;
+			// brcm,// firmware = <&firmware>;
 			status = "disabled";
 		};
 
@@ -114,7 +114,7 @@
 			compatible = "brcm,bcm2712-axiperf";
 			reg = <0x7c012800 0x100>,
 				<0x7e000000 0x100>;
-			firmware = <&firmware>;
+			// firmware = <&firmware>;
 			status = "disabled";
 		};
 
@@ -1177,7 +1177,7 @@
 
 			interrupts = <GIC_SPI 98 IRQ_TYPE_LEVEL_HIGH>;
 
-			clocks = <&firmware_clocks 11>;
+			// clocks = <&firmware_clocks 11>;
 			clock-names = "hevc";
 			iommus = <&iommu2>;
 			status = "disabled";
@@ -1224,9 +1224,9 @@
 			      <0x10 0x02030800  0x0 0x0700>;
 			reg-names = "hub", "core0", "sms";
 
-			power-domains = <&pm BCM2835_POWER_DOMAIN_GRAFX_V3D>;
-			resets = <&pm BCM2835_RESET_V3D>;
-			clocks = <&firmware_clocks 5>;
+			// power-domains = <&pm BCM2835_POWER_DOMAIN_GRAFX_V3D>;
+			// resets = <&pm BCM2835_RESET_V3D>;
+			// clocks = <&firmware_clocks 5>;
 			clocks-names = "v3d";
 			interrupts = <GIC_SPI 250 IRQ_TYPE_LEVEL_HIGH>,
 				     <GIC_SPI 249 IRQ_TYPE_LEVEL_HIGH>;
@@ -1249,7 +1249,7 @@
 			compatible = "raspberrypi,pispbe";
 			reg = <0x10 0x00880000  0x0 0x4000>;
 			interrupts = <GIC_SPI 72 IRQ_TYPE_LEVEL_HIGH>;
-			clocks = <&firmware_clocks 7>;
+			// clocks = <&firmware_clocks 7>;
 			clocks-names = "isp_be";
 			status = "okay";
 			iommus = <&iommu2>;
