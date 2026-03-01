@@ -223,7 +223,7 @@ bcm_pcib_reset_controller(struct bcm_pcib_softc *sc)
 }
 
 static void
-bcm_pcib_perst_set_2712(struct bcm_pcibsoftc *sc, bool assert)
+bcm_pcib_perst_set_2712(struct bcm_pcib_softc *sc, bool assert)
 {
 	uint32_t tmp;
 
@@ -838,8 +838,8 @@ static device_method_t bcm_pcib_methods[] = {
 	DEVMETHOD_END
 };
 
-DEFINE_CLASS_1(pcib, bcm_pcib_driver, bcm_pcib_methods,
+DEFINE_CLASS_1(pcib, bcm2712_pcib_driver, bcm_pcib_methods,
     sizeof(struct bcm_pcib_softc), generic_pcie_fdt_driver);
 
-DRIVER_MODULE(bcm_pcib, simplebus, bcm_pcib_driver, 0, 0);
+DRIVER_MODULE(bcm2712_pcib, simplebus, bcm2712_pcib_driver, 0, 0);
 
